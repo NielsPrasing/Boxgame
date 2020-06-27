@@ -84,8 +84,8 @@ button[disabled], button[disabled]:hover {
 	margin-bottom: 3rem;
 }
 .box {
-	width: 100px;
-	height: 100px;
+	width: 15vw;
+	height: 15vw;
 }
 .dark {
 	background-image: radial-gradient(closest-side, grey, grey);
@@ -99,7 +99,7 @@ button[disabled], button[disabled]:hover {
 	opacity: 0;
 	transition: opacity .5s;
 }
-.on/*, .light:hover*/ {
+.on {
 	opacity: 1;
 }
 .gamebutton-container {
@@ -113,7 +113,7 @@ button[disabled], button[disabled]:hover {
 .gamebutton-container#pos-five { grid-area: pos-five;
 }
 .gamebutton {
-	width: 100px;
+	width: 15vw;
 	height: 50px;
 }
 
@@ -124,5 +124,12 @@ button[disabled], button[disabled]:hover {
 	}
 	.col-4 {
 		grid-column: span 4;
+	}
+	.box {
+		width: 100px;
+		height: 100px;
+	}
+	.gamebutton {
+		width: 100px;
 	}
 }
