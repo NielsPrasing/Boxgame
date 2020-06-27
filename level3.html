@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Boxgame Level 3</title>
+		<link rel="stylesheet" href="css/style-boxgame.css">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<script src="script/script-boxgame-lvl3.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<h1>Level 3</h1>
+			<nav>
+				<a class="button-primair" href="level1.html">Back</a>
+				<a class="button-primair" href="boxgame.html">Home</a>
+				<button id="nxt-lvl" class="button-primair" onclick="window.location.href='level4.html';" disabled>Next level</button>
+			</nav>
+		</header>
+		<main>
+			<section class="col-12 block lvl1">
+				<div class="box-container">
+					<div class="box dark"></div>
+					<div id="box1" class="box light"></div>
+				</div>
+				<div class="box-container">
+					<div class="box dark"></div>
+					<div id="box2" class="box light"></div>
+				</div>
+				<div class="box-container">
+					<div class="box dark"></div>
+					<div id="box3" class="box light"></div>
+				</div>
+				<div class="box-container">
+					<div class="box dark"></div>
+					<div id="box4" class="box light"></div>
+				</div>
+				<div class="box-container">
+					<div class="box dark"></div>
+					<div id="box5" class="box light"></div>
+				</div>
+				<div id="pos-one" class="gamebutton-container">
+					<button class="gamebutton button-primair" onclick="buttonOne()">1</button>
+				</div>
+				<div id="pos-two" class="gamebutton-container">
+					<button class="gamebutton button-primair" onclick="buttonTwo()">2</button>
+				</div>
+				<div id="pos-three" class="gamebutton-container">
+					<button class="gamebutton button-primair" onclick="buttonThree()">3</button>
+				</div>
+				<div id="pos-four" class="gamebutton-container">
+					<button class="gamebutton button-primair" onclick="buttonFour()">4</button>
+				</div>
+				<div id="pos-five" class="gamebutton-container">
+					<button class="gamebutton button-primair" onclick="buttonFive()">5</button>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
