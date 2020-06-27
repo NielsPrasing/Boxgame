@@ -6,50 +6,63 @@ let box4 = boxes[3];
 let box5 = boxes[4];
 
 function buttonOne() {
-	box1.classList.toggle("on")
-	box3.classList.toggle("on")
+	let box1On = box1.classList.contains("on");
+	let box2On = box2.classList.contains("on");
+	let box3On = box3.classList.contains("on");
+	let box4On = box4.classList.contains("on");
+	let box5On = box5.classList.contains("on");
 
-	check()
+	if (box1On && box2On && box3On && box4On && !box5On) {
+		box5.classList.add("on");
+		document.getElementById("nxt-lvl").removeAttribute("disabled");
+		document.querySelectorAll(".gamebutton").forEach(box => box.setAttribute("disabled", ""));
+	} else {
+		boxes.forEach(b => b.classList.remove("on"));
+	}
 }
 
 function buttonTwo() {
-	let box2On = box2.classList.contains("on");
 	let box1On = box1.classList.contains("on");
-	let box4On = box4.classList.contains("on");
-	
-	if (box2On && !box1On) {
-		box1.classList.add("on");
-	} else if (!box2On && box1On) {
-		box1.classList.remove("on");
-	}
+	let box2On = box2.classList.contains("on");
+	let box3On = box3.classList.contains("on");
 
-	if (box1On && !box4On) {
-		box4.classList.add("on");
-	} else if (!box1On && box4On) {
-		box4.classList.remove("on");
+	if (box1On && box2On && !box3On) {
+		box3.classList.add("on");
+	} else {
+		boxes.forEach(b => b.classList.remove("on"));
 	}
-
-	if (box4On && !box2On) {
-		box2.classList.add("on");
-	} else if (!box4On && box2On) {
-		box2.classList.remove("on");
-	}
-
-	box3.classList.remove("on");
-	
-	check()
 }
 
 function buttonThree() {
-	box3.classList.toggle("on")
-	box5.classList.toggle("on")
+	let box1On = box1.classList.contains("on");
+	let box2On = box2.classList.contains("on");
+	let box3On = box3.classList.contains("on");
+	let box4On = box4.classList.contains("on");
 
-	check()
+	if (box1On && box2On && box3On && !box4On) {
+		box4.classList.add("on");
+	} else {
+		boxes.forEach(b => b.classList.remove("on"));
+	}
 }
 
-function check() {
-	if (boxes.every(b => b.classList.contains("on"))) {
-		document.getElementById("nxt-lvl").removeAttribute("disabled");
-		document.querySelectorAll(".gamebutton").forEach(box => box.setAttribute("disabled", ""));
+function buttonFour() {
+	let box1On = box1.classList.contains("on");
+	let box2On = box2.classList.contains("on");
+
+	if (box1On && !box2On) {
+		box2.classList.add("on");
+	} else {
+		boxes.forEach(b => b.classList.remove("on"));
+	}
+}
+
+function buttonFive() {
+	let box1On = box1.classList.contains("on");
+
+	if (!box1On) {
+		box1.classList.add("on");
+	} else {
+		boxes.forEach(b => b.classList.remove("on"));
 	}
 }
