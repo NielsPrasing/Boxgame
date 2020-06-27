@@ -6,18 +6,9 @@ let box4 = boxes[3];
 let box5 = boxes[4];
 
 function buttonOne() {
-	if (box1.classList.contains("on")) {
-		box1.classList.remove("on");
-	} else {
-		box1.classList.add("on");
-	}
-	
-	if (box3.classList.contains("on")) {
-		box3.classList.remove("on");
-	} else {
-		box3.classList.add("on");
-	}
-	
+	box1.classList.toggle("on")
+	box3.classList.toggle("on")
+
 	check()
 }
 
@@ -50,17 +41,9 @@ function buttonTwo() {
 }
 
 function buttonThree() {
-	if (box5.classList.contains("on")) {
-		box5.classList.remove("on");
-	} else {
-		box5.classList.add("on");
-	}
-	if (box3.classList.contains("on")) {
-		box3.classList.remove("on");
-	} else {
-		box3.classList.add("on");
-	}
-	
+	box3.classList.toggle("on")
+	box5.classList.toggle("on")
+
 	check()
 }
 
