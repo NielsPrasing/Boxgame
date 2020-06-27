@@ -71,7 +71,7 @@ button[disabled], button[disabled]:hover {
 }
 
 /* ===== Level pages ===== */
-.lvl1 {
+.level {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-areas:
