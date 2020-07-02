@@ -116,6 +116,17 @@ button[disabled], button[disabled]:hover {
 	width: 15vw;
 	height: 50px;
 }
+.finito {
+	animation: finito .4s ease-in-out 6 .3s alternate;
+}
+@keyframes finito {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: .2;
+	}
+}
 
 /* ===== Media queries ===== */
 @media only screen and (min-width: 768px) {

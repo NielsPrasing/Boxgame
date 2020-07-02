@@ -50,6 +50,7 @@ function buttonThree() {
 function check() {
 	if (boxes.every(b => b.classList.contains("on"))) {
 		document.getElementById("nxt-lvl").removeAttribute("disabled");
-		document.querySelectorAll(".gamebutton").forEach(box => box.setAttribute("disabled", ""));
+		document.querySelectorAll(".gamebutton").forEach(gameButton => gameButton.setAttribute("disabled", ""));
+		boxes.forEach(box => box.classList.add("finito"));
 	}
 }

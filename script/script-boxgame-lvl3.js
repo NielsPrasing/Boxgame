@@ -15,7 +15,8 @@ function buttonOne() {
 	if (box1On && box2On && box3On && box4On && !box5On) {
 		box5.classList.add("on");
 		document.getElementById("nxt-lvl").removeAttribute("disabled");
-		document.querySelectorAll(".gamebutton").forEach(box => box.setAttribute("disabled", ""));
+		document.querySelectorAll(".gamebutton").forEach(gameButton => gameButton.setAttribute("disabled", ""));
+		boxes.forEach(box => box.classList.add("finito"));
 	} else {
 		boxes.forEach(b => b.classList.remove("on"));
 	}
