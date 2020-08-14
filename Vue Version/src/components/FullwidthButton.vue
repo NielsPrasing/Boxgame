@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div class="col-12 button">
-      <LinkButton :text="text" :href="href" />
+      <LinkButton @click.native="emitClick" :text="text" />
     </div>
   </div>
 </template>
@@ -14,7 +14,12 @@ export default Vue.extend({
   components: {
     LinkButton
   },
-  props: ["href", "text"]
+  props: ["href", "text"],
+  methods: {
+    emitClick: function() {
+      this.$emit("click");
+    }
+  }
 });
 </script>
 

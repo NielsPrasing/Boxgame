@@ -1,9 +1,14 @@
 <template>
   <div id="home">
-    <Header />
+    <Header
+      v-bind:title="headerTitle"
+      v-bind:gameNav="game"
+      v-on:goBack="goBack"
+    />
     <main>
       <InstructionBlock />
-      <FullwidthButton href="level1.html" text="Start Game" />
+      <FullwidthButton v-if="!game" v-on:click="startGame" text="Start Game" />
+      <Game v-else v-bind:level="level" />
       <Footer />
     </main>
   </div>
@@ -15,13 +20,38 @@ import Header from "../components/Header.vue";
 import InstructionBlock from "../components/InstructionBlock.vue";
 import Footer from "../components/Footer.vue";
 import FullwidthButton from "../components/FullwidthButton.vue";
+import Game from "../components/Game.vue";
 
 export default Vue.extend({
   components: {
     Header,
     InstructionBlock,
     Footer,
-    FullwidthButton
+    FullwidthButton,
+    Game
+  },
+  data: function() {
+    return {
+      game: false,
+      level: 1
+    };
+  },
+  methods: {
+    startGame: function() {
+      this.game = true;
+    },
+    goBack: function() {
+      if (this.level > 1) {
+        this.level--;
+      } else {
+        this.game = false;
+      }
+    }
+  },
+  computed: {
+    headerTitle: function(): string {
+      return this.game ? `Level ${this.level}` : "Boxgame";
+    }
   }
 });
 </script>

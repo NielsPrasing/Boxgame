@@ -1,17 +1,17 @@
 <template>
-  <a class="button-primair" :href="href">{{ text }}</a>
+  <button class="button-primair" v-bind:disabled="disabled">{{ text }}</button>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 
 export default Vue.extend({
-  props: ["href", "text"]
+  props: ["href", "text", "disabled"]
 });
 </script>
 
 <style lang="scss">
-.button a {
+.button button {
   display: inline-block;
 }
 .button-primair {
@@ -24,9 +24,14 @@ export default Vue.extend({
 .button-primair:hover {
   background-color: #006f70;
 }
-a:any-link,
-a:active {
-  text-decoration: none;
+button {
   color: inherit;
+  font: inherit;
+  border: none;
+}
+button[disabled],
+button[disabled]:hover {
+  background-color: grey;
+  color: #111b1d;
 }
 </style>
