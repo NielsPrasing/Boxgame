@@ -1,10 +1,10 @@
 <template>
   <div class="col-12 block level">
-    <Box v-bind:on="boxStates.box1On" />
-    <Box v-bind:on="boxStates.box2On" />
-    <Box v-bind:on="boxStates.box3On" />
-    <Box v-bind:on="boxStates.box4On" />
-    <Box v-bind:on="boxStates.box5On" />
+    <Box v-bind:on="boxStates.box1On" v-bind:finished="finished" />
+    <Box v-bind:on="boxStates.box2On" v-bind:finished="finished" />
+    <Box v-bind:on="boxStates.box3On" v-bind:finished="finished" />
+    <Box v-bind:on="boxStates.box4On" v-bind:finished="finished" />
+    <Box v-bind:on="boxStates.box5On" v-bind:finished="finished" />
     <GameButton
       v-bind:disabled="disableButtons"
       v-on:click="gameButtonClicked(1)"
@@ -51,9 +51,10 @@ function getOriginalData() {
         3: ["o:3", "o:5"]
       }
     ] as Array<levelOptions>,
-    disableButtons: false
+    disableButtons: false,
+    finished: false
   };
-} 
+}
 
 export default Vue.extend({
   components: {
@@ -140,6 +141,7 @@ export default Vue.extend({
         currentStates.box5On
       ) {
         this.disableButtons = true;
+        this.finished = true;
         this.$emit("nextLevel");
       }
     }

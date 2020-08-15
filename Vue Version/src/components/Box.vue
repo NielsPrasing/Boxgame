@@ -1,7 +1,7 @@
 <template>
   <div class="box-container">
     <div class="box dark" />
-    <div v-bind:class="{ on: on }" class="box light" />
+    <div v-bind:class="{ on: on, finito: finished }" class="box light" />
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  props: ["on"]
+  props: ["on", "finished"]
 });
 </script>
 
@@ -41,6 +41,17 @@ export default Vue.extend({
   .box {
     width: 100px;
     height: 100px;
+  }
+}
+.finito {
+  animation: finito 0.4s ease-in-out 6 0.3s alternate;
+}
+@keyframes finito {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
   }
 }
 </style>

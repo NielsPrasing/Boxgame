@@ -3,6 +3,7 @@
     <Header
       v-bind:title="headerTitle"
       v-bind:gameNav="game"
+      v-bind:finished="finished"
       v-on:goBack="goBack"
       v-on:goNext="goNext"
       v-bind:nextLevelEnabled="nextLevelEnabled"
@@ -35,7 +36,9 @@ export default Vue.extend({
   data: function() {
     return {
       game: false,
+      finished: false,
       level: 1,
+      levels: 2,
       nextLevelEnabled: false
     };
   },
@@ -55,7 +58,9 @@ export default Vue.extend({
       this.nextLevelEnabled = false;
     },
     enableNextLevel: function() {
-      this.nextLevelEnabled = true;
+      if (this.level < this.levels) {
+        this.nextLevelEnabled = true;
+      }
     }
   },
   computed: {
