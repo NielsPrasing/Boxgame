@@ -1,0 +1,25 @@
+name: Vue Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    name: build-and-deploy
+    
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+        with:
+          working-directory: './Vue Version'
+      - name: Build Vue Version
+        run: npm build
+        working-directory: './Vue Version'
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: './Vue Version/dist'
